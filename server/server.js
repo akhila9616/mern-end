@@ -25,8 +25,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Root welcome route
-app.get('/', (req, res) => {
+// API Documentation route
+app.get('/api', (req, res) => {
   res.status(200).json({
     message: 'Welcome to TaskFlow API',
     version: '1.0.0',
