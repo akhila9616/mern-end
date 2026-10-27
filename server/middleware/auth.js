@@ -22,8 +22,7 @@ const protect = async (req, res, next) => {
     }
 
     // Verify token
-    const JWT_SECRET = process.env.JWT_SECRET || 'taskflow_jwt_secret_key_2024';
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, 'taskflow_jwt_secret_key_2024');
 
     // Fetch user from DB and attach to req.user (excluding password)
     const user = await User.findById(decoded.id).select('-password');
