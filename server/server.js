@@ -77,6 +77,7 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({
     status: 'ok',
     service: 'taskflow-server',
+    version: 'v2-deployed',
     timestamp: new Date().toISOString(),
   });
 });
