@@ -1,8 +1,13 @@
-const express = require('express');
-const cors = require('cors');
 const path = require('path');
 const fs = require('fs');
 const dotenv = require('dotenv');
+
+// Load environment variables immediately
+dotenv.config({ path: path.join(__dirname, '.env') });
+process.env.JWT_SECRET = process.env.JWT_SECRET || 'taskflow_jwt_secret_key_2024';
+
+const express = require('express');
+const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/errorHandler');
 
@@ -11,9 +16,6 @@ const authRoutes = require('./routes/authRoutes');
 const taskRoutes = require('./routes/taskRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const activityRoutes = require('./routes/activityRoutes');
-
-// Load environment variables from .env file
-dotenv.config({ path: path.join(__dirname, '.env') });
 
 // Connect to MongoDB
 connectDB();
