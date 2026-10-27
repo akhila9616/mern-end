@@ -7,7 +7,8 @@
     "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "install-all": "cd server && npm install && cd ../client && npm install",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm install && npm run build && cd ../server && npm install",
+    "start": "node server/server.js"
   },
   "keywords": ["mern", "task-management", "kanban", "react", "express", "mongodb"],
   "author": "Akhila",
