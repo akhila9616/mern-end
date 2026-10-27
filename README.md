@@ -9,6 +9,15 @@ A full-stack task and project management application built with the **MERN Stack
 
 ---
 
+## 🌐 Live Application & Demo Access
+
+> **🔗 Live URL:** [https://everybody-invitations-stood-activation.trycloudflare.com](https://everybody-invitations-stood-activation.trycloudflare.com)  
+> **👤 Demo Email:** `demo@taskflow.com`  
+> **🔑 Demo Password:** `password123`  
+> *(One-click demo login button available directly on the login page)*
+
+---
+
 ## ✨ Features
 
 ### Core Task Management
