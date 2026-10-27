@@ -86,14 +86,17 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/activities', activityRoutes);
 
 // Serve Frontend Assets in Production
-const clientDistPath = path.join(__dirname, '../client/dist');
-if (fs.existsSync(clientDistPath)) {
-  app.use(express.static(clientDistPath));
+const publicPath = fs.existsSync(path.join(__dirname, 'public'))
+  ? path.join(__dirname, 'public')
+  : path.join(__dirname, '../client/dist');
+
+if (fs.existsSync(publicPath)) {
+  app.use(express.static(publicPath));
   app.get('*', (req, res, next) => {
     if (req.url.startsWith('/api')) {
       return next();
     }
-    res.sendFile(path.join(clientDistPath, 'index.html'));
+    res.sendFile(path.join(publicPath, 'index.html'));
   });
 }
 
