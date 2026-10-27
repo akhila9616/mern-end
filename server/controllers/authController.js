@@ -7,8 +7,10 @@ const User = require('../models/User');
  * @param {string} id - User ObjectId
  * @returns {string} Signed JWT
  */
+const JWT_SECRET = process.env.JWT_SECRET || 'taskflow_jwt_secret_key_2024';
+
 const generateToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
+  return jwt.sign({ id }, JWT_SECRET, {
     expiresIn: '30d',
   });
 };
